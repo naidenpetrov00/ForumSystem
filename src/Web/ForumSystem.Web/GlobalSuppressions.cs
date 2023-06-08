@@ -11,3 +11,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.HomeController.Privacy~Microsoft.AspNetCore.Mvc.IActionResult")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.Controllers.HomeController")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "namespace", Target = "~N:ForumSystem.Web.Controllers")]
+[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.CategoriesController.#ctor(ForumSystem.Services.Data.ICategoriesService)")]
+[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.Controllers.CategoriesController")]

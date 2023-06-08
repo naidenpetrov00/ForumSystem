@@ -1,0 +1,22 @@
+﻿@model ForumSystem.Web.ViewModels.Categories.CategoryViewModel
+@{
+	this.ViewData["Title"] = Model.Title;
+}
+
+<h1 class="display-3">@Model.Title</h1>
+<div class="alert alert-info">
+	@Model.Description
+</div>
+
+@foreach (var post in Model.Posts)
+{
+	<div class="media-body">
+		<h4 class="media-heading">@post.Title</h4>
+		<div class="row">
+			<p class="col-md-6">Posted on @post.CreatedOn by @post.UserUserName</p>
+			<p class="col-md-6">@post.CommentsCount comments</p>
+		</div>
+		<p>
+		</p>
+	</div>
+}
