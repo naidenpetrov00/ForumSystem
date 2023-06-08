@@ -7,14 +7,17 @@
 <div class="text-center">
 	<h1 class="display-4">@this.ViewData["Title"]</h1>
 </div>
-
-@foreach (var category in Model.Categories)
-{
-	<div class="media">
-		<img src="@category.ImageUrl" class="mr-3" alt="@category.Title">
-		<div class="media-body">
-			<h5 class="mt-0"><a href="@category.Url">@category.Title</a></h5>
-			<p>@category.Description</p>
+<div class="row">
+	@foreach (var category in Model.Categories)
+	{
+		<div class="col-md-4 d-flex" style="margin-bottom: 5%;">
+			<div class="flex-shrink-0">
+				<img src="@category.ImageUrl" width="100" class="mr-3" alt="@category.Title">
+			</div>
+			<div class="flex-grow-1 ms-3">
+				<h5 class="mt-0"><a href="@category.Url">@category.Title</a></h5>
+				@category.Description
+			</div>
 		</div>
-	</div>
-}
+	}
+</div>
