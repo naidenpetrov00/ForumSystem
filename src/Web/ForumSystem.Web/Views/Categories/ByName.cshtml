@@ -12,12 +12,13 @@
 {
 	<div>
 		<h4 class="media-heading">@post.Title</h4>
+		<p>@post.ShortContent</p>
 		<ul class="list-inline list-unstyled text-end">
 			<li class="list-inline-item">
-				<i class="bi bi-calendar-fill"></i>   @post.CreatedOn
+				<i class="bi bi-person-fill"></i>   @post.UserUserName
 			</li>
 			<li class="list-inline-item">
-				<i class="bi bi-person-fill"></i>   @post.UserUserName
+				<i class="bi bi-calendar-fill"></i>   @post.CreatedOn
 			</li>
 			<li class="list-inline-item">
 				<i class="bi bi-chat-left-text-fill"></i>   @post.CommentsCount

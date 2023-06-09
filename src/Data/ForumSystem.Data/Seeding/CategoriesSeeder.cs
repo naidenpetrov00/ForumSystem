@@ -23,6 +23,7 @@
             ("News", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjCAfVgATBaPFFWX2WWJF6x-gVW4P1mdvfKA&usqp=CAU"),
             ("Music", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyuUH-jJVNQkw61TNppZbgDFvQDmhTEMjUQ&usqp=CAU"),
             ("Cats", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_dFNmibo2ZUzFvE_ycE-hSDovIsEerbkbmA&usqp=CAU"),
+            ("Dogs", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKSx8ju-t0U0JGYevncvlijySp5fC3GpmIpg&usqp=CAU"),
             };
             foreach (var category in categories)
             {
