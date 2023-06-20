@@ -5,7 +5,6 @@ namespace ForumSystem.Data.Models
     using System.Collections.Generic;
 
     using ForumSystem.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity

@@ -6,7 +6,6 @@
 
     using ForumSystem.Common;
     using ForumSystem.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
 

@@ -2,7 +2,6 @@
 {
     using ForumSystem.Common;
     using ForumSystem.Web.Controllers;
-
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 

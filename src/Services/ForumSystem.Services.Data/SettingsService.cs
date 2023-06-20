@@ -5,6 +5,7 @@
 
     using ForumSystem.Data.Common.Repositories;
     using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Services.Mapping;
 
     public class SettingsService : ISettingsService

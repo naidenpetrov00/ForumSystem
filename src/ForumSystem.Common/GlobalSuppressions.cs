@@ -5,8 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.HomeController.#ctor(ForumSystem.Data.ApplicationDbContext)")]
-[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.HomeController.Error~Microsoft.AspNetCore.Mvc.IActionResult")]
-[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.HomeController.Index~Microsoft.AspNetCore.Mvc.IActionResult")]
-[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "member", Target = "~M:ForumSystem.Web.Controllers.HomeController.Privacy~Microsoft.AspNetCore.Mvc.IActionResult")]
-[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.Controllers.HomeController")]
+[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Common.GlobalConstants")]
+[assembly: SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1404:Code analysis suppression should have justification", Justification = "<Pending>")]

@@ -5,9 +5,8 @@
 
     using ForumSystem.Data.Common.Repositories;
     using ForumSystem.Data.Models;
-    using ForumSystem.Services.Data;
+    using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Web.ViewModels.Settings;
-
     using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController

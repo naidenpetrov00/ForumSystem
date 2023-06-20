@@ -5,7 +5,6 @@
 
     using ForumSystem.Data.Common.Models;
     using ForumSystem.Data.Common.Repositories;
-
     using Microsoft.EntityFrameworkCore;
 
     public class EfDeletableEntityRepository<TEntity> : EfRepository<TEntity>, IDeletableEntityRepository<TEntity>

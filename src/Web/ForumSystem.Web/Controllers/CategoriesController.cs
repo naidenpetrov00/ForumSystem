@@ -1,10 +1,10 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-	using ForumSystem.Services.Data;
-	using ForumSystem.Web.ViewModels.Categories;
-	using Microsoft.AspNetCore.Mvc;
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Web.ViewModels.Categories;
+    using Microsoft.AspNetCore.Mvc;
 
-	public class CategoriesController : Controller
+    public class CategoriesController : Controller
 	{
 		private readonly ICategoriesService categoriesService;
 

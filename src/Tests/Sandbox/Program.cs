@@ -13,6 +13,7 @@
     using ForumSystem.Data.Repositories;
     using ForumSystem.Data.Seeding;
     using ForumSystem.Services.Data;
+    using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Services.Messaging;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
