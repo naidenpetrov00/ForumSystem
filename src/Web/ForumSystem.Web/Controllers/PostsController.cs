@@ -2,7 +2,6 @@
 {
 	using System.Threading.Tasks;
 
-	using ForumSystem.Data.Common.Repositories;
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Data.Interfaces;
 	using ForumSystem.Web.ViewModels.Posts;
@@ -10,12 +9,12 @@
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.AspNetCore.Mvc;
 
-	public class PostController : Controller
+	public class PostsController : Controller
 	{
 		private readonly UserManager<ApplicationUser> userManager;
 		private readonly IPostService postService;
 
-		public PostController(
+		public PostsController(
 			UserManager<ApplicationUser> userManager,
 			IPostService postService)
 		{

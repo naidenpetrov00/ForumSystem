@@ -1,12 +1,11 @@
 ﻿namespace ForumSystem.Web.ViewModels.Categories
 {
-    using System;
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 
-    using ForumSystem.Data.Models;
-    using ForumSystem.Services.Mapping;
+	using ForumSystem.Data.Models;
+	using ForumSystem.Services.Mapping;
 
-    public class CategoryViewModel : IMapFrom<Category>
+	public class CategoryViewModel : IMapFrom<Category>
     {
         public int Id { get; set; }
 

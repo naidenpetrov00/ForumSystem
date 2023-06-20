@@ -50,7 +50,7 @@
     <Content Update="Views\Categories\ByName.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Views\Post\Create.cshtml">
+    <Content Update="Views\Posts\Create.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\lib\bootstrap\bootstrap-icons.svg">
