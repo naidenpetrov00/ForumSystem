@@ -33,7 +33,7 @@
 
 	<div>
 		<label asp-for="CategoryId"></label>
-		<select asp-for="CategoryId" asp-items="@Model.Categories.Select(x=> new SelectListItem(x.Name,x.Id.ToString()))" class="form-control"></select>
+		<select asp-for="CategoryId" asp-items="@Model.SelectListCategories" class="form-control"></select>
 		<span asp-validation-for="CategoryId" class="text-danger"></span>
 	</div>
 	<hr />
