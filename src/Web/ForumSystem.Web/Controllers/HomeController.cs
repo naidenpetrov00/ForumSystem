@@ -1,13 +1,13 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-    using System.Diagnostics;
+	using System.Diagnostics;
 
-    using ForumSystem.Services.Data.Interfaces;
-    using ForumSystem.Web.ViewModels;
-    using ForumSystem.Web.ViewModels.Home;
-    using Microsoft.AspNetCore.Mvc;
+	using ForumSystem.Services.Data.Interfaces;
+	using ForumSystem.Web.ViewModels;
+	using ForumSystem.Web.ViewModels.Home;
+	using Microsoft.AspNetCore.Mvc;
 
-    public class HomeController : BaseController
+	public class HomeController : BaseController
 	{
 		private readonly ICategoriesService categoriesService;
 

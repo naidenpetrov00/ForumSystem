@@ -1,14 +1,14 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-    using System.Threading.Tasks;
+	using System.Threading.Tasks;
 
-    using ForumSystem.Data.Models;
-    using ForumSystem.Services.Data.Interfaces;
-    using ForumSystem.Web.ViewModels.Categories;
-    using ForumSystem.Web.ViewModels.Posts;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;
+	using ForumSystem.Data.Models;
+	using ForumSystem.Services.Data.Interfaces;
+	using ForumSystem.Web.ViewModels.Categories;
+	using ForumSystem.Web.ViewModels.Posts;
+	using Microsoft.AspNetCore.Authorization;
+	using Microsoft.AspNetCore.Identity;
+	using Microsoft.AspNetCore.Mvc;
 
 	public class PostsController : Controller
 	{
@@ -24,6 +24,17 @@
 			this.userManager = userManager;
 			this.categoriesService = categoriesService;
 			this.postService = postService;
+		}
+
+		public IActionResult ById(int id)
+		{
+			var postViewModel = this.postService.GetById<PostViewModel>(id);
+			if (postViewModel == null)
+			{
+				return this.NotFound();
+			}
+
+			return this.View(postViewModel);
 		}
 
 		[Authorize]
@@ -51,12 +62,6 @@
 			var postId = await this.postService.CreateAsync(input.Title, input.Content, input.CategoryId, user.Id);
 
 			return this.RedirectToAction(nameof(this.ById), new { id = postId });
-		}
-
-		[Authorize]
-		public IActionResult ById(int id)
-		{
-			return this.View();
 		}
 	}
 }

@@ -33,3 +33,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.ViewModels.Categories.CategoryDropDownViewModel")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.ViewModels.Categories.CategoryViewModel")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "namespace", Target = "~N:ForumSystem.Web.ViewModels.Posts")]
+[assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:ForumSystem.Web.ViewModels.Posts.PostViewModel")]

@@ -21,6 +21,6 @@
 
 		public IEnumerable<CategoryDropDownViewModel> Categories { get; set; }
 
-		public IEnumerable<SelectListItem> SelectListCategories => this.Categories.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+		public IEnumerable<SelectListItem> SelectListCategories => this.Categories?.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
 	}
 }

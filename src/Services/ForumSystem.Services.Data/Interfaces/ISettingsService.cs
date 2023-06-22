@@ -1,11 +1,11 @@
 ﻿namespace ForumSystem.Services.Data.Interfaces
 {
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 
-    public interface ISettingsService
-    {
-        int GetCount();
+	public interface ISettingsService
+	{
+		int GetCount();
 
-        IEnumerable<T> GetAll<T>();
-    }
+		IEnumerable<T> GetAll<T>();
+	}
 }

@@ -1,12 +1,15 @@
 ﻿namespace ForumSystem.Web.ViewModels.Categories
 {
 	using System;
+	using System.Net;
 	using System.Text.RegularExpressions;
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Mapping;
 
 	public class PostInCategoryViewModel : IMapFrom<Post>
 	{
+		public int Id { get; set; }
+
 		public string Title { get; set; }
 
 		public string UserUserName { get; set; }
@@ -17,7 +20,7 @@
 		{
 			get
 			{
-				var content = Regex.Replace(this.Content, @"<[^>]+>", string.Empty);
+				var content = WebUtility.HtmlDecode(Regex.Replace(this.Content, @"<[^>]+>", string.Empty));
 
 				return content.Length > 100 ? content.Substring(0, 300) + "..." : content;
 			}

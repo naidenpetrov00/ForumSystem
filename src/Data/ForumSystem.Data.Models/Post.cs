@@ -1,11 +1,12 @@
 ﻿namespace ForumSystem.Data.Models
 {
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
 
-    using ForumSystem.Data.Common.Models;
+	using ForumSystem.Data.Common.Models;
 
-    public class Post : BaseDeletableModel<int>
+	public class Post : BaseDeletableModel<int>
 	{
 		public Post()
 		{

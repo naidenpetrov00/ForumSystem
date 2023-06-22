@@ -1,10 +1,10 @@
 ﻿namespace ForumSystem.Data.Models
 {
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 
-    using ForumSystem.Data.Common.Models;
+	using ForumSystem.Data.Common.Models;
 
-    public class Category : BaseDeletableModel<int>
+	public class Category : BaseDeletableModel<int>
 	{
 		public Category()
 		{

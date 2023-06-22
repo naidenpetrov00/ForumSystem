@@ -1,10 +1,12 @@
 ﻿namespace ForumSystem.Services.Data
 {
+	using System.Linq;
 	using System.Threading.Tasks;
 
 	using ForumSystem.Data.Common.Repositories;
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Data.Interfaces;
+	using ForumSystem.Services.Mapping;
 
 	public class PostService : IPostService
 	{
@@ -29,6 +31,17 @@
 			await this.postRepository.SaveChangesAsync();
 
 			return post.Id;
+		}
+
+		public T GetById<T>(int id)
+		{
+			var post = this.postRepository
+				.All()
+				.Where(x => x.Id == id)
+				.To<T>()
+				.FirstOrDefault();
+
+			return post;
 		}
 	}
 }

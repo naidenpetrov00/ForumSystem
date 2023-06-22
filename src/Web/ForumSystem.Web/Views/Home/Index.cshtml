@@ -12,10 +12,10 @@
 	{
 		<div class="col-md-4 d-flex" style="margin-bottom: 2%;">
 			<div class="flex-shrink-0">
-				<img src="@category.ImageUrl" width="100" class="mr-3" alt="@category.Title">
+				<a href="@category.Url" class="nav-link"><img src="@category.ImageUrl" width="100" class="mr-3" alt="@category.Title"></a>
 			</div>
 			<div class="flex-grow-1 ms-3">
-				<h5 class="mt-0"><a href="@category.Url">@category.Title  </a></h5>
+				<h5 class="mt-0"><a href="@category.Url" class="nav-link">@category.Title  </a></h5>
 				<h6>@category.Description</h6>
 				<h6>Posts: @category.PostsCount</h6>
 			</div>
