@@ -69,6 +69,7 @@
 			services.AddTransient<ISettingsService, SettingsService>();
 			services.AddTransient<ICategoriesService, CategoriesService>();
 			services.AddTransient<IPostService, PostService>();
+			services.AddTransient<IVoteService, VotesService>();
 		}
 
 		private static void Configure(WebApplication app)

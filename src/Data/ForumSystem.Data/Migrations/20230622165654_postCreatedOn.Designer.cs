@@ -13,7 +13,7 @@ namespace ForumSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230622165654_postCreatedOn")]
-    partial class postCreatedOn
+    partial class PostCreatedOn
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-#nullable disable
+﻿#nullable disable
 
 namespace ForumSystem.Data.Migrations
 {
+	using Microsoft.EntityFrameworkCore.Migrations;
+
     /// <inheritdoc />
-    public partial class postCreatedOn : Migration
+    public partial class PostCreatedOn : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
