@@ -20,13 +20,13 @@
 						</div>
 						<div class="text-muted small col-6 text-end">
 							<div>
-								<i class="bi bi-hand-thumbs-up"></i>
-							</div>
-							<div>
+								<a href="#" onclick="sendVote(@Model.Id, true)">
+									<i class="bi bi-caret-up-fill"></i>
+								</a>
 								@Model.VotesCount
-							</div>
-							<div>
-								<i class="bi bi-hand-thumbs-down"></i>
+								<a href="#" onclick="sendVote(@Model.Id, false)">
+									<i class="bi bi-caret-down-fill"></i>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -46,3 +46,27 @@
 		</div>
 	</div>
 </div>
+
+@section Scripts{
+	<script>
+		function sendVote(postId, isUpVote) {
+			var json = {
+				postId: postId,
+				isUpVote: isUpVote
+			};
+			console.log(json);
+
+			$.ajax(
+				{
+					url: "/api/votes",
+					type: "POST",
+					data: JSON.stringify(json),
+					contentype: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function () {
+					}
+				}
+			)
+		}
+	</script>
+}
