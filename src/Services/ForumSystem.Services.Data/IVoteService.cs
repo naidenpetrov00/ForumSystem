@@ -1,5 +1,6 @@
 ﻿namespace ForumSystem.Services.Data
 {
+	using ForumSystem.Common;
 	using System.Threading.Tasks;
 
 	public interface IVoteService

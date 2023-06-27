@@ -1,7 +1,7 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
 	using System.Threading.Tasks;
-
+	using ForumSystem.Common;
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Data;
 	using ForumSystem.Web.ViewModels.Votes;
@@ -24,7 +24,7 @@
 			this.userManager = userManager;
 		}
 
-		[Authorize]
+		
 		[HttpPost]
 		public async Task<ActionResult<VoteResponseModel>> Post(VoteInputModel input)
 		{

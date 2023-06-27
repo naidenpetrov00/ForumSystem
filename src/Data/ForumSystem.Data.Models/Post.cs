@@ -2,7 +2,7 @@
 {
 	using System.Collections.Generic;
 	using System.ComponentModel.DataAnnotations;
-
+	using System.Linq;
 	using ForumSystem.Data.Common.Models;
 
 	public class Post : BaseDeletableModel<int>
@@ -29,5 +29,6 @@
 		public virtual ICollection<Comment> Comments { get; set; }
 
 		public virtual ICollection<Vote> Votes { get; set; }
+
 	}
 }

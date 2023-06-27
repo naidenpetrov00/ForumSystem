@@ -19,11 +19,12 @@
 							<div class="text-muted small">@Model.CreatedOn</div>
 						</div>
 						<div class="text-muted small col-6 text-end">
+							<form id="votesForm" method="post"></form>
 							<div>
 								<a href="#" onclick="sendVote(@Model.Id, true)">
 									<i class="bi bi-caret-up-fill"></i>
 								</a>
-								@Model.VotesCount
+								<div id="votesCount">@Model.VotesCount</div>
 								<a href="#" onclick="sendVote(@Model.Id, false)">
 									<i class="bi bi-caret-down-fill"></i>
 								</a>
@@ -50,20 +51,22 @@
 @section Scripts{
 	<script>
 		function sendVote(postId, isUpVote) {
-			var json = {
+			let token = $("#votesForm input[name=__RequestVerificationToken]").val();
+			let json = {
 				postId: postId,
 				isUpVote: isUpVote
 			};
-			console.log(json);
 
 			$.ajax(
 				{
 					url: "/api/votes",
 					type: "POST",
 					data: JSON.stringify(json),
-					contentype: "application/json; charset=utf-8",
+					contentType: "application/json; charset=utf-8",
 					dataType: "json",
-					success: function () {
+					headers: { "X-CSRF-TOKEN": token },
+					success: function (data) {
+						$("#votesCount").html(data.votesCount)
 					}
 				}
 			)
