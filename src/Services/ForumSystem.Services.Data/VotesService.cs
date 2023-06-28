@@ -26,7 +26,7 @@
 			return votes;
 		}
 
-		public async Task VoteAsync(int postId, string userId, bool isUpvote)
+		public async Task VoteAsync(int postId, bool isUpvote, string userId)
 		{
 			var vote = this.voteRepository
 				.All()

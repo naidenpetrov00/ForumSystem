@@ -12,7 +12,9 @@
 		/// <param name="userId"></param>
 		/// <param name="isUpvote">If true - upVote, else - downVote.</param>
 		/// <returns></returns>
-		Task VoteAsync(int postId, string userId, bool isUpvote);
+		Task VoteAsync(int postId, bool isUpvote, string userId);
+
+		Task NotSignedInUserVote(int postId, string guestCookie, bool isUpVote);
 
 		int GetVotes(int postId);
 	}
