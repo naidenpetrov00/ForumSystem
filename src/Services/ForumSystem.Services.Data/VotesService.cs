@@ -31,11 +31,12 @@
 			return votes;
 		}
 
-		public async Task GuestVoteAsync(int postId, bool isUpvote, string guestId)
+		public async Task GuestVoteAsync(int postId, bool isUpvote, string identity, bool signedUser)
 		{
 			var vote = this.voteRepository
 				.All()
-				.FirstOrDefault(x => x.PostId == postId && x.GuestId == guestId);
+				.FirstOrDefault(x => x.PostId == postId && x.GuestId == identity);
+
 
 			if (vote != null)
 			{
@@ -43,12 +44,17 @@
 			}
 			else
 			{
-				vote = new Vote
+				vote = new Vote();
+				vote.PostId = postId;
+				if (isUpvote)
 				{
-					PostId = postId,
-					GuestId = guestId,
-					Type = isUpvote ? VoteType.UpVote : VoteType.DownVote,
-				};
+					vote.UserId = identity;
+				}
+				else
+				{
+					vote.GuestId = identity;
+				}
+				vote.Type = isUpvote ? VoteType.UpVote : VoteType.DownVote;
 
 				await this.voteRepository.AddAsync(vote);
 			}

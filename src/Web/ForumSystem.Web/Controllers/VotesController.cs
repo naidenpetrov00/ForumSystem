@@ -36,7 +36,7 @@
 			else
 			{
 				var guestCookie = this.Request.Cookies[GuestCookieModel.Key];
-				await this.voteService.GuestVoteAsync(input.PostId, input.IsUpVote, guestCookie);
+				await this.voteService.GuestVoteAsync(input.PostId, input.IsUpVote, guestCookie,false);
 			}
 
 			var votes = this.voteService.GetVotes(input.PostId);

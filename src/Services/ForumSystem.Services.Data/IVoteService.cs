@@ -13,7 +13,7 @@
 		/// <returns></returns>
 		Task UserVoteAsync(int postId, bool isUpvote, string userId);
 
-		Task GuestVoteAsync(int postId, bool isUpvote, string guestId);
+		Task GuestVoteAsync(int postId, bool isUpvote, string guestId, bool signedUser);
 
 		int GetVotes(int postId);
 	}
