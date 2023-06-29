@@ -2,6 +2,7 @@
 {
 	using System.Reflection;
 
+	using ForumSystem.Common.Models;
 	using ForumSystem.Data;
 	using ForumSystem.Data.Common;
 	using ForumSystem.Data.Common.Repositories;
@@ -53,6 +54,7 @@
 					options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 				})
 				.AddRazorRuntimeCompilation();
+			services.AddAutoMapper(typeof(AutoMapperConfig));
 			services.AddAntiforgery(options =>
 			{
 				options.HeaderName = "X-CSRF-TOKEN";
@@ -99,6 +101,22 @@
 				app.UseHsts();
 			}
 
+			app.Use((context, next) =>
+			{
+				if (!context.Request.Cookies.ContainsKey(GuestCookieModel.Key))
+				{
+					var cookieOptions = new CookieOptions()
+					{
+						Expires = GuestCookieModel.Expires,
+						IsEssential = true,
+						SameSite = SameSiteMode.Strict,
+					};
+
+					context.Response.Cookies.Append(GuestCookieModel.Key, GuestCookieModel.Value, cookieOptions);
+				}
+
+				return next();
+			});
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseCookiePolicy();

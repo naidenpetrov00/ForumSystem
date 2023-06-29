@@ -1,8 +1,10 @@
 ﻿namespace ForumSystem.Services.Data
 {
 	using System.Linq;
+	using System.Security.Principal;
 	using System.Threading.Tasks;
 
+	using AutoMapper;
 	using ForumSystem.Common;
 	using ForumSystem.Data.Common.Repositories;
 	using ForumSystem.Data.Models;
@@ -10,10 +12,13 @@
 	public class VotesService : IVoteService
 	{
 		private readonly IRepository<Vote> voteRepository;
+		private readonly IMapper mapper;
 
-		public VotesService(IRepository<Vote> voteRepository)
+		public VotesService(IRepository<Vote> voteRepository,
+			IMapper mapper)
 		{
 			this.voteRepository = voteRepository;
+			this.mapper = mapper;
 		}
 
 		public int GetVotes(int postId)
@@ -26,7 +31,32 @@
 			return votes;
 		}
 
-		public async Task VoteAsync(int postId, bool isUpvote, string userId)
+		public async Task GuestVoteAsync(int postId, bool isUpvote, string guestId)
+		{
+			var vote = this.voteRepository
+				.All()
+				.FirstOrDefault(x => x.PostId == postId && x.GuestId == guestId);
+
+			if (vote != null)
+			{
+				vote.Type = isUpvote ? VoteType.UpVote : VoteType.DownVote;
+			}
+			else
+			{
+				vote = new Vote
+				{
+					PostId = postId,
+					GuestId = guestId,
+					Type = isUpvote ? VoteType.UpVote : VoteType.DownVote,
+				};
+
+				await this.voteRepository.AddAsync(vote);
+			}
+
+			await this.voteRepository.SaveChangesAsync();
+		}
+
+		public async Task UserVoteAsync(int postId, bool isUpvote, string userId)
 		{
 			var vote = this.voteRepository
 				.All()

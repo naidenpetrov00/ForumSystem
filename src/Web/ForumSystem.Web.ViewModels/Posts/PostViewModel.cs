@@ -4,7 +4,6 @@
 	using System.Linq;
 
 	using AutoMapper;
-	using ForumSystem.Common;
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Mapping;
 	using Ganss.Xss;
