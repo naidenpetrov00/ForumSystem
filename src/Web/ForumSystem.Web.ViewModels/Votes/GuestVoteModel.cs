@@ -1,7 +1,7 @@
 ﻿namespace ForumSystem.Web.ViewModels.Votes
 {
-	using ForumSystem.Services.Mapping;
-	using ForumSystem.Web.Controllers;
+    using ForumSystem.Services.Mapping;
+    using ForumSystem.Web.Controllers;
 
 	public class GuestVoteModel : IMapFrom<VoteInputModel>
 	{

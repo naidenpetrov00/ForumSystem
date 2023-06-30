@@ -12,13 +12,10 @@
 	public class VotesService : IVoteService
 	{
 		private readonly IRepository<Vote> voteRepository;
-		private readonly IMapper mapper;
 
-		public VotesService(IRepository<Vote> voteRepository,
-			IMapper mapper)
+		public VotesService(IRepository<Vote> voteRepository)
 		{
 			this.voteRepository = voteRepository;
-			this.mapper = mapper;
 		}
 
 		public int GetVotes(int postId)
@@ -31,12 +28,11 @@
 			return votes;
 		}
 
-		public async Task GuestVoteAsync(int postId, bool isUpvote, string identity, bool signedUser)
+		public async Task VoteAsync(int postId, bool isUpvote, string identity, bool signedUser)
 		{
 			var vote = this.voteRepository
 				.All()
-				.FirstOrDefault(x => x.PostId == postId && x.GuestId == identity);
-
+				.FirstOrDefault(x => x.PostId == postId && signedUser ? x.UserId == identity : x.GuestId == identity);
 
 			if (vote != null)
 			{
@@ -46,7 +42,7 @@
 			{
 				vote = new Vote();
 				vote.PostId = postId;
-				if (isUpvote)
+				if (signedUser)
 				{
 					vote.UserId = identity;
 				}
@@ -54,32 +50,8 @@
 				{
 					vote.GuestId = identity;
 				}
+
 				vote.Type = isUpvote ? VoteType.UpVote : VoteType.DownVote;
-
-				await this.voteRepository.AddAsync(vote);
-			}
-
-			await this.voteRepository.SaveChangesAsync();
-		}
-
-		public async Task UserVoteAsync(int postId, bool isUpvote, string userId)
-		{
-			var vote = this.voteRepository
-				.All()
-				.FirstOrDefault(x => x.PostId == postId && x.UserId == userId);
-
-			if (vote != null)
-			{
-				vote.Type = isUpvote ? VoteType.UpVote : VoteType.DownVote;
-			}
-			else
-			{
-				vote = new Vote
-				{
-					PostId = postId,
-					UserId = userId,
-					Type = isUpvote ? VoteType.UpVote : VoteType.DownVote,
-				};
 
 				await this.voteRepository.AddAsync(vote);
 			}
