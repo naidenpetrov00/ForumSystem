@@ -8,6 +8,8 @@
 		[Fact]
 		public async Task HomePageShouldHaveTitle()
 		{
+	
+			
 			var serverFactory = new WebApplicationFactory<Program>();
 			var client = serverFactory.CreateClient();
 
