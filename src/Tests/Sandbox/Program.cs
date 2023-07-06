@@ -20,7 +20,7 @@
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Extensions.Logging;
 
-	public static class Program
+	public class Program
 	{
 		public static int Main(string[] args)
 		{
@@ -58,7 +58,7 @@
 			return await Task.FromResult(0);
 		}
 
-		private static void ConfigureServices(ServiceCollection services)
+		public static void ConfigureServices(ServiceCollection services)
 		{
 			var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
 				.AddJsonFile("appsettings.json", false, true)

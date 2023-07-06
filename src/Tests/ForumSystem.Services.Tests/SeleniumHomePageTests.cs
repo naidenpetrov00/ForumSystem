@@ -1,30 +1,34 @@
 ﻿namespace ForumSystem.Services.Tests
 {
-	using ForumSystem.Web;
+	using Microsoft.Extensions.Logging;
+	using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
+	using OpenQA.Selenium;
 	using OpenQA.Selenium.Chrome;
-	using OpenQA.Selenium.Remote;
+	using OpenQA.Selenium.Support.Extensions;
+	using System.Diagnostics;
+	using Xunit.Abstractions;
 
 	public class SeleniumHomePageTests
 	{
-		private RemoteWebDriver browser;
-		private SeleniumServerFactory<Program> serverFactory;
+		private readonly string RootUri = "https://localhost:5001";
+		private IWebDriver driver;
 
 		public SeleniumHomePageTests()
 		{
-			this.serverFactory = new SeleniumServerFactory<Program>();
-			serverFactory.CreateClient();
 			var options = new ChromeOptions();
-			options.AddArguments("--headless", "--ignore-certificate-errors");
-
-			this.browser = new RemoteWebDriver(options);
+			options.AddArguments(
+				"--headless",
+				"--no-sandbox",
+				"--ignore-certificate-errors",
+				"--disable-blink-features=AutomationControlled");
+			this.driver = new ChromeDriver(options);
 		}
 
 		[Fact]
 		public void HomePageShouldHaveH1Tag()
 		{
-			this.browser.Navigate().GoToUrl(this.serverFactory.RootUri + "/Home/Index");
-			Assert.Contains("Welcome to", this.browser.FindElementByCssSelector("h1").Text);
-
+			this.driver.Navigate().GoToUrl(this.RootUri + "/");
+			Assert.Contains("Welcome to", this.driver.PageSource);
 		}
 	}
 }
