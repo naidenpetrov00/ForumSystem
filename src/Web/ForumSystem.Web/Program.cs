@@ -59,6 +59,7 @@
 			{
 				options.HeaderName = "X-CSRF-TOKEN";
 			});
+			services.AddSwaggerGen();
 
 			services.AddRazorPages();
 			services.AddDatabaseDeveloperPageExceptionFilter();
@@ -89,6 +90,9 @@
 			}
 
 			AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+
+			app.UseSwagger();
+			app.UseSwaggerUI();
 
 			if (app.Environment.IsDevelopment())
 			{
