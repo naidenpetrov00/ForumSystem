@@ -1,5 +1,6 @@
 ﻿namespace ForumSystem.Web
 {
+	using System.Configuration;
 	using System.Reflection;
 
 	using ForumSystem.Common.Models;
@@ -65,6 +66,13 @@
 			services.AddDatabaseDeveloperPageExceptionFilter();
 
 			services.AddSingleton(configuration);
+
+			services.AddDistributedSqlServerCache(options =>
+			{
+				options.ConnectionString = configuration.GetConnectionString("DefaultConnection");
+				options.SchemaName = "dbo";
+				options.TableName = "CacheRecords";
+			});
 
 			// Data repositories
 			services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
