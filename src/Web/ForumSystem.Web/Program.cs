@@ -1,5 +1,6 @@
 ﻿namespace ForumSystem.Web
 {
+	using System;
 	using System.Configuration;
 	using System.Reflection;
 
@@ -73,6 +74,12 @@
 				options.SchemaName = "dbo";
 				options.TableName = "CacheRecords";
 			});
+			services.AddSession(options =>
+			{
+				options.IdleTimeout = TimeSpan.FromDays(2);
+				options.Cookie.HttpOnly = true;
+				options.Cookie.IsEssential = true;
+			});
 
 			// Data repositories
 			services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
@@ -129,6 +136,7 @@
 
 				return next();
 			});
+			app.UseSession();
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
