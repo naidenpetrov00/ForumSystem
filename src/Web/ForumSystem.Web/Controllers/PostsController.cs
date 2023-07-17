@@ -60,6 +60,7 @@
 
 			var user = await this.userManager.GetUserAsync(this.User);
 			var postId = await this.postService.CreateAsync(input.Title, input.Content, input.CategoryId, user.Id);
+			this.TempData["InfoMessage"] = "Form post created!";
 
 			return this.RedirectToAction(nameof(this.ById), new { id = postId });
 		}

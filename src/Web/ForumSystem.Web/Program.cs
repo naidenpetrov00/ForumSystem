@@ -80,6 +80,10 @@
 				options.Cookie.HttpOnly = true;
 				options.Cookie.IsEssential = true;
 			});
+			services.AddResponseCompression(options =>
+			{
+				options.EnableForHttps = true; ;
+			});
 
 			// Data repositories
 			services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
@@ -136,6 +140,7 @@
 
 				return next();
 			});
+			app.UseResponseCompression();
 			app.UseSession();
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
