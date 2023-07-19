@@ -1,13 +1,13 @@
 ﻿namespace ForumSystem.Data.Seeding
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Models;
+    using ForumSystem.Data.Models;
 
-	public class CategoriesSeeder : ISeeder
+    public class CategoriesSeeder : ISeeder
 	{
 		public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
 		{

@@ -1,14 +1,15 @@
 ﻿namespace ForumSystem.Services.Data
 {
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Common.Repositories;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Data.Interfaces;
-	using ForumSystem.Services.Mapping;
+    using ForumSystem.Data.Common.Repositories;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Services.Mapping;
 
-	public class PostService : IPostService
+    public class PostService : IPostService
 	{
 		private readonly IDeletableEntityRepository<Post> postRepository;
 
@@ -33,6 +34,21 @@
 			return post.Id;
 		}
 
+		public IEnumerable<T> GetByCategoryId<T>(int categoryId, int? take = null, int skip = 0)
+		{
+			var query = this.postRepository
+				.All()
+				.OrderByDescending(x => x.CreatedOn)
+				.Where(x => x.CategoryId == categoryId)
+				.Skip(skip);
+			if (take != null)
+			{
+				query = query.Take(take.Value);
+			}
+
+			return query.To<T>().ToList();
+		}
+
 		public T GetById<T>(int id)
 		{
 			var post = this.postRepository
@@ -42,6 +58,13 @@
 				.FirstOrDefault();
 
 			return post;
+		}
+
+		public int GetCountByCategoryId(int categoryId)
+		{
+			return this.postRepository
+				.All()
+				.Count(x => x.CategoryId == categoryId);
 		}
 	}
 }

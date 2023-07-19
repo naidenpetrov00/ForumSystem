@@ -1,9 +1,9 @@
 ﻿namespace ForumSystem.Web.ViewModels.Home
 {
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Mapping;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Mapping;
 
-	public class IndexCategoryViewModel : IMapFrom<Category>
+    public class IndexCategoryViewModel : IMapFrom<Category>
 	{
 		public string Title { get; set; }
 

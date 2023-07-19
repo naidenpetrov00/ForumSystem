@@ -1,10 +1,10 @@
 ﻿namespace ForumSystem.Data.Common.Repositories
 {
-	using System;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-	public interface IRepository<TEntity> : IDisposable
+    public interface IRepository<TEntity> : IDisposable
 		where TEntity : class
 	{
 		IQueryable<TEntity> All();

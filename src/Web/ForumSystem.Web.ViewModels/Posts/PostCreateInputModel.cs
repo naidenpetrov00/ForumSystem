@@ -1,13 +1,13 @@
 ﻿namespace ForumSystem.Web.ViewModels.Posts
 {
-	using System.Collections.Generic;
-	using System.ComponentModel.DataAnnotations;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
-	using ForumSystem.Web.ViewModels.Categories;
-	using Microsoft.AspNetCore.Mvc.Rendering;
+    using ForumSystem.Web.ViewModels.Categories;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
-	public class PostCreateInputModel
+    public class PostCreateInputModel
 	{
 		[Required]
 		public string Title { get; set; }

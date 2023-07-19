@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Services.Mapping
 {
-	using AutoMapper;
+    using AutoMapper;
 
-	public interface IHaveCustomMappings
+    public interface IHaveCustomMappings
 	{
 		void CreateMappings(IProfileExpression configuration);
 	}

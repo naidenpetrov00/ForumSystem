@@ -1,9 +1,9 @@
 ﻿namespace ForumSystem.Services.Messaging
 {
-	using System.Collections.Generic;
-	using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
-	public interface IEmailSender
+    public interface IEmailSender
 	{
 		Task SendEmailAsync(
 			string from,

@@ -1,10 +1,10 @@
 ﻿namespace ForumSystem.Web.ViewModels.Settings
 {
-	using AutoMapper;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Mapping;
+    using AutoMapper;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Mapping;
 
-	public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
+    public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
 	{
 		public int Id { get; set; }
 

@@ -1,13 +1,13 @@
 ﻿namespace ForumSystem.Services.Mapping
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
 
-	using AutoMapper;
+    using AutoMapper;
 
-	public static class AutoMapperConfig
+    public static class AutoMapperConfig
 	{
 		private static bool initialized;
 

@@ -1,9 +1,9 @@
 ﻿namespace ForumSystem.Data.Seeding
 {
-	using System;
-	using System.Threading.Tasks;
+    using System;
+    using System.Threading.Tasks;
 
-	public interface ISeeder
+    public interface ISeeder
 	{
 		Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider);
 	}

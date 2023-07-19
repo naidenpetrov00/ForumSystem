@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Data.Common.Models
 {
-	using System;
+    using System;
 
-	public interface IDeletableEntity
+    public interface IDeletableEntity
 	{
 		bool IsDeleted { get; set; }
 

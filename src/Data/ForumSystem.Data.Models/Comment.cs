@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Data.Models
 {
-	using ForumSystem.Data.Common.Models;
+    using ForumSystem.Data.Common.Models;
 
-	public class Comment : BaseDeletableModel<int>
+    public class Comment : BaseDeletableModel<int>
 	{
 		public int PostId { get; set; }
 

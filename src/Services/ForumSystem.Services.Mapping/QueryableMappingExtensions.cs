@@ -1,12 +1,12 @@
 ﻿namespace ForumSystem.Services.Mapping
 {
-	using System;
-	using System.Linq;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
 
-	using AutoMapper.QueryableExtensions;
+    using AutoMapper.QueryableExtensions;
 
-	public static class QueryableMappingExtensions
+    public static class QueryableMappingExtensions
 	{
 		public static IQueryable<TDestination> To<TDestination>(
 			this IQueryable source,

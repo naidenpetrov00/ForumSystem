@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Common.Models
 {
-	using System;
+    using System;
 
-	public class GuestCookieModel
+    public class GuestCookieModel
 	{
 		public static string Key => "GuestIdentity";
 

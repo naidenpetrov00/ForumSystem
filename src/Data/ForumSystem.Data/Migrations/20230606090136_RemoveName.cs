@@ -2,10 +2,10 @@
 
 namespace ForumSystem.Data.Migrations
 {
-	using Microsoft.EntityFrameworkCore.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
 	/// <inheritdoc />
-	public partial class RemoveName : Migration
+    public partial class RemoveName : Migration
 	{
 		/// <inheritdoc />
 		protected override void Up(MigrationBuilder migrationBuilder)

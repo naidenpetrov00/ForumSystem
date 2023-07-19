@@ -1,9 +1,9 @@
 ﻿namespace ForumSystem.Web.Areas.Admin.Controllers
 {
-	using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc;
 
-	[Area("Admin")]
-	public class DashboardController : Controller
+    [Area("Admin")]
+    public class DashboardController : Controller
 	{
 		public IActionResult Index()
 		{

@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Services.Data.Interfaces
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public interface ICategoriesService
+    public interface ICategoriesService
 	{
 		IEnumerable<T> GetAll<T>(int? count = null);
 

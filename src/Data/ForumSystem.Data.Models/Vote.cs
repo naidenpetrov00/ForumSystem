@@ -1,9 +1,9 @@
 ﻿namespace ForumSystem.Data.Models
 {
-	using ForumSystem.Common;
-	using ForumSystem.Data.Common.Models;
+    using ForumSystem.Common;
+    using ForumSystem.Data.Common.Models;
 
-	public class Vote : BaseModel<int>
+    public class Vote : BaseModel<int>
 	{
 		public int PostId { get; set; }
 

@@ -1,26 +1,26 @@
 ﻿namespace Sandbox
 {
-	using System;
-	using System.Diagnostics;
-	using System.IO;
-	using System.Threading.Tasks;
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Threading.Tasks;
 
-	using CommandLine;
-	using ForumSystem.Data;
-	using ForumSystem.Data.Common;
-	using ForumSystem.Data.Common.Repositories;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Data.Repositories;
-	using ForumSystem.Data.Seeding;
-	using ForumSystem.Services.Data;
-	using ForumSystem.Services.Data.Interfaces;
-	using ForumSystem.Services.Messaging;
-	using Microsoft.EntityFrameworkCore;
-	using Microsoft.Extensions.Configuration;
-	using Microsoft.Extensions.DependencyInjection;
-	using Microsoft.Extensions.Logging;
+    using CommandLine;
+    using ForumSystem.Data;
+    using ForumSystem.Data.Common;
+    using ForumSystem.Data.Common.Repositories;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Data.Repositories;
+    using ForumSystem.Data.Seeding;
+    using ForumSystem.Services.Data;
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Services.Messaging;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
 
-	public class Program
+    public class Program
 	{
 		public static int Main(string[] args)
 		{

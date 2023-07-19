@@ -1,11 +1,11 @@
 ﻿namespace ForumSystem.Data
 {
-	using System.Linq;
+    using System.Linq;
 
-	using ForumSystem.Data.Common.Models;
-	using Microsoft.EntityFrameworkCore;
+    using ForumSystem.Data.Common.Models;
+    using Microsoft.EntityFrameworkCore;
 
-	internal static class EntityIndexesConfiguration
+    internal static class EntityIndexesConfiguration
 	{
 		public static void Configure(ModelBuilder modelBuilder)
 		{

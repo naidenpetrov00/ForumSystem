@@ -1,12 +1,12 @@
 ﻿namespace ForumSystem.Data
 {
-	using System;
-	using System.Threading.Tasks;
+    using System;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Common;
-	using Microsoft.EntityFrameworkCore;
+    using ForumSystem.Data.Common;
+    using Microsoft.EntityFrameworkCore;
 
-	public class DbQueryRunner : IDbQueryRunner
+    public class DbQueryRunner : IDbQueryRunner
 	{
 		public DbQueryRunner(ApplicationDbContext context)
 		{

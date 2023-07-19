@@ -1,17 +1,18 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-	using System;
-	using System.Diagnostics;
-	using System.Threading.Tasks;
-	using ForumSystem.Services.Data.Interfaces;
-	using ForumSystem.Web.ViewModels;
-	using ForumSystem.Web.ViewModels.Home;
-	using Microsoft.AspNetCore.Http;
-	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.Extensions.Caching.Distributed;
-	using Microsoft.Extensions.Logging;
+    using System;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
 
-	public class HomeController : BaseController
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Web.ViewModels;
+    using ForumSystem.Web.ViewModels.Home;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Caching.Distributed;
+    using Microsoft.Extensions.Logging;
+
+    public class HomeController : BaseController
 	{
 		private readonly ICategoriesService categoriesService;
 		private readonly ILogger<HomeController> logger;

@@ -1,18 +1,18 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-	using System.Threading.Tasks;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Common.Enums;
-	using ForumSystem.Common.Models;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Data;
-	using ForumSystem.Web.ViewModels.Votes;
-	using Microsoft.AspNetCore.Identity;
-	using Microsoft.AspNetCore.Mvc;
+    using ForumSystem.Common.Enums;
+    using ForumSystem.Common.Models;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data;
+    using ForumSystem.Web.ViewModels.Votes;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
 
-	[ApiController]
-	[Route("api/[controller]")]
-	public class VotesController : ControllerBase
+    [ApiController]
+    [Route("api/[controller]")]
+    public class VotesController : ControllerBase
 	{
 		private readonly IVoteService voteService;
 		private readonly UserManager<ApplicationUser> userManager;

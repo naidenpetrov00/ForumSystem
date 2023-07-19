@@ -1,12 +1,12 @@
 ﻿namespace ForumSystem.Data.Seeding
 {
-	using System;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Models;
+    using ForumSystem.Data.Models;
 
-	internal class SettingsSeeder : ISeeder
+    internal class SettingsSeeder : ISeeder
 	{
 		public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
 		{

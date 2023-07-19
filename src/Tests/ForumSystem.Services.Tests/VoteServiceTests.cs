@@ -1,11 +1,11 @@
+using ForumSystem.Data;
+using ForumSystem.Data.Models;
+using ForumSystem.Data.Repositories;
+using ForumSystem.Services.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ForumSystem.Services.Tests
 {
-    using ForumSystem.Data;
-    using ForumSystem.Data.Models;
-    using ForumSystem.Data.Repositories;
-    using ForumSystem.Services.Data;
-    using Microsoft.EntityFrameworkCore;
-
     public class VoteServiceTests
     {
         [Fact]

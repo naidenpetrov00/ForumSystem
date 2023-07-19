@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Services.Data.Interfaces
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public interface ISettingsService
+    public interface ISettingsService
 	{
 		int GetCount();
 

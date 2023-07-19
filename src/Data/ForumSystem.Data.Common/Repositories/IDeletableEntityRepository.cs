@@ -1,10 +1,10 @@
 ﻿namespace ForumSystem.Data.Common.Repositories
 {
-	using System.Linq;
+    using System.Linq;
 
-	using ForumSystem.Data.Common.Models;
+    using ForumSystem.Data.Common.Models;
 
-	public interface IDeletableEntityRepository<TEntity> : IRepository<TEntity>
+    public interface IDeletableEntityRepository<TEntity> : IRepository<TEntity>
 		where TEntity : class, IDeletableEntity
 	{
 		IQueryable<TEntity> AllWithDeleted();

@@ -1,8 +1,8 @@
 ﻿namespace ForumSystem.Data.Common.Models
 {
-	using System;
+    using System;
 
-	public interface IAuditInfo
+    public interface IAuditInfo
 	{
 		DateTime CreatedOn { get; set; }
 

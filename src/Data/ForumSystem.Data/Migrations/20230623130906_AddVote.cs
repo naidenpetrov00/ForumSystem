@@ -2,12 +2,12 @@
 
 namespace ForumSystem.Data.Migrations
 {
-	using System;
+    using System;
 
-	using Microsoft.EntityFrameworkCore.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
 	/// <inheritdoc />
-	public partial class AddVote : Migration
+    public partial class AddVote : Migration
 	{
 		/// <inheritdoc />
 		protected override void Up(MigrationBuilder migrationBuilder)

@@ -3,7 +3,7 @@
     using ForumSystem.Services.Mapping;
     using ForumSystem.Web.Controllers;
 
-	public class GuestVoteModel : IMapFrom<VoteInputModel>
+    public class GuestVoteModel : IMapFrom<VoteInputModel>
 	{
 		public int PostId { get; set; }
 

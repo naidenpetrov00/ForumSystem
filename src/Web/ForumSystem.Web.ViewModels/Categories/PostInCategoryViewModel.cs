@@ -1,13 +1,13 @@
 ﻿namespace ForumSystem.Web.ViewModels.Categories
 {
-	using System;
-	using System.Net;
-	using System.Text.RegularExpressions;
+    using System;
+    using System.Net;
+    using System.Text.RegularExpressions;
 
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Mapping;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Mapping;
 
-	public class PostInCategoryViewModel : IMapFrom<Post>
+    public class PostInCategoryViewModel : IMapFrom<Post>
 	{
 		public int Id { get; set; }
 

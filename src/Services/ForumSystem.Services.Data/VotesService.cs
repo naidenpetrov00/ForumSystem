@@ -1,15 +1,15 @@
 ﻿namespace ForumSystem.Services.Data
 {
-	using System.Linq;
-	using System.Security.Principal;
-	using System.Threading.Tasks;
+    using System.Linq;
+    using System.Security.Principal;
+    using System.Threading.Tasks;
 
-	using AutoMapper;
-	using ForumSystem.Common;
-	using ForumSystem.Data.Common.Repositories;
-	using ForumSystem.Data.Models;
+    using AutoMapper;
+    using ForumSystem.Common;
+    using ForumSystem.Data.Common.Repositories;
+    using ForumSystem.Data.Models;
 
-	public class VotesService : IVoteService
+    public class VotesService : IVoteService
 	{
 		private readonly IRepository<Vote> voteRepository;
 

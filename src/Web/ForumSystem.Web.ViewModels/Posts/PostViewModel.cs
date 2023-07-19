@@ -1,14 +1,14 @@
 ﻿namespace ForumSystem.Web.ViewModels.Posts
 {
-	using System;
-	using System.Linq;
+    using System;
+    using System.Linq;
 
-	using AutoMapper;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Mapping;
-	using Ganss.Xss;
+    using AutoMapper;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Mapping;
+    using Ganss.Xss;
 
-	public class PostViewModel : IMapFrom<Post>, IMapTo<Post>, IHaveCustomMappings
+    public class PostViewModel : IMapFrom<Post>, IMapTo<Post>, IHaveCustomMappings
 	{
 		public int Id { get; set; }
 

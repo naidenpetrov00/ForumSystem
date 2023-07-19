@@ -1,17 +1,17 @@
 ﻿namespace ForumSystem.Data
 {
-	using System;
-	using System.Linq;
-	using System.Reflection;
-	using System.Threading;
-	using System.Threading.Tasks;
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Common.Models;
-	using ForumSystem.Data.Models;
-	using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-	using Microsoft.EntityFrameworkCore;
+    using ForumSystem.Data.Common.Models;
+    using ForumSystem.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
 
-	public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
 	{
 		private static readonly MethodInfo SetIsDeletedQueryFilterMethod =
 			typeof(ApplicationDbContext).GetMethod(

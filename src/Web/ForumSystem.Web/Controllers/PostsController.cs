@@ -1,16 +1,16 @@
 ﻿namespace ForumSystem.Web.Controllers
 {
-	using System.Threading.Tasks;
+    using System.Threading.Tasks;
 
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Data.Interfaces;
-	using ForumSystem.Web.ViewModels.Categories;
-	using ForumSystem.Web.ViewModels.Posts;
-	using Microsoft.AspNetCore.Authorization;
-	using Microsoft.AspNetCore.Identity;
-	using Microsoft.AspNetCore.Mvc;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Web.ViewModels.Categories;
+    using ForumSystem.Web.ViewModels.Posts;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
 
-	public class PostsController : Controller
+    public class PostsController : Controller
 	{
 		private readonly UserManager<ApplicationUser> userManager;
 		private readonly ICategoriesService categoriesService;

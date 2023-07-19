@@ -2,7 +2,7 @@
 
 namespace ForumSystem.Data.Migrations
 {
-	using Microsoft.EntityFrameworkCore.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
     /// <inheritdoc />
     public partial class VoteChange : Migration

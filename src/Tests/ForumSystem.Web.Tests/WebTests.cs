@@ -1,12 +1,12 @@
 ﻿namespace ForumSystem.Web.Tests
 {
-	using System.Net;
-	using System.Threading.Tasks;
+    using System.Net;
+    using System.Threading.Tasks;
 
-	using Microsoft.AspNetCore.Mvc.Testing;
-	using Xunit;
+    using Microsoft.AspNetCore.Mvc.Testing;
+    using Xunit;
 
-	public class WebTests : IClassFixture<WebApplicationFactory<Program>>
+    public class WebTests : IClassFixture<WebApplicationFactory<Program>>
 	{
 		private readonly WebApplicationFactory<Program> server;
 

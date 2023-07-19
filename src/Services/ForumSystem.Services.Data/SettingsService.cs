@@ -1,14 +1,14 @@
 ﻿namespace ForumSystem.Services.Data
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
 
-	using ForumSystem.Data.Common.Repositories;
-	using ForumSystem.Data.Models;
-	using ForumSystem.Services.Data.Interfaces;
-	using ForumSystem.Services.Mapping;
+    using ForumSystem.Data.Common.Repositories;
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data.Interfaces;
+    using ForumSystem.Services.Mapping;
 
-	public class SettingsService : ISettingsService
+    public class SettingsService : ISettingsService
 	{
 		private readonly IDeletableEntityRepository<Setting> settingsRepository;
 

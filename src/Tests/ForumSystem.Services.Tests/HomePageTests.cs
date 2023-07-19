@@ -1,8 +1,8 @@
-﻿namespace ForumSystem.Services.Tests
-{
-	using ForumSystem.Web;
-	using Microsoft.AspNetCore.Mvc.Testing;
+﻿using ForumSystem.Web;
+using Microsoft.AspNetCore.Mvc.Testing;
 
+namespace ForumSystem.Services.Tests
+{
 	public class HomePageTests
 	{
 		[Fact]
