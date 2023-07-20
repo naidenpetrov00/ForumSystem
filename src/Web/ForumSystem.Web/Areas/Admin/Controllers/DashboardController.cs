@@ -4,10 +4,10 @@
 
     [Area("Admin")]
     public class DashboardController : Controller
-	{
-		public IActionResult Index()
-		{
-			return View();
-		}
-	}
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
 }

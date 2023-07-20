@@ -13,7 +13,7 @@ namespace ForumSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230628171930_removeuserIdRequirementFromVotes")]
-    partial class removeuserIdRequirementFromVotes
+    partial class RemoveuserIdRequirementFromVotes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

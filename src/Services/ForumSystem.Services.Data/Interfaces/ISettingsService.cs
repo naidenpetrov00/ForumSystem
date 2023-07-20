@@ -3,9 +3,9 @@
     using System.Collections.Generic;
 
     public interface ISettingsService
-	{
-		int GetCount();
+    {
+        int GetCount();
 
-		IEnumerable<T> GetAll<T>();
-	}
+        IEnumerable<T> GetAll<T>();
+    }
 }

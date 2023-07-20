@@ -3,9 +3,9 @@
     using System;
 
     public interface IDeletableEntity
-	{
-		bool IsDeleted { get; set; }
+    {
+        bool IsDeleted { get; set; }
 
-		DateTime? DeletedOn { get; set; }
-	}
+        DateTime? DeletedOn { get; set; }
+    }
 }

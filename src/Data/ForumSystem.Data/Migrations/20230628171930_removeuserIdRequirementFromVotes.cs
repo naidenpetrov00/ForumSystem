@@ -5,7 +5,7 @@ namespace ForumSystem.Data.Migrations
     using Microsoft.EntityFrameworkCore.Migrations;
 
     /// <inheritdoc />
-    public partial class removeuserIdRequirementFromVotes : Migration
+    public partial class RemoveuserIdRequirementFromVotes : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

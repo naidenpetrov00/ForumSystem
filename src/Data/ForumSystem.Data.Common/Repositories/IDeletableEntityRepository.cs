@@ -5,14 +5,14 @@
     using ForumSystem.Data.Common.Models;
 
     public interface IDeletableEntityRepository<TEntity> : IRepository<TEntity>
-		where TEntity : class, IDeletableEntity
-	{
-		IQueryable<TEntity> AllWithDeleted();
+        where TEntity : class, IDeletableEntity
+    {
+        IQueryable<TEntity> AllWithDeleted();
 
-		IQueryable<TEntity> AllAsNoTrackingWithDeleted();
+        IQueryable<TEntity> AllAsNoTrackingWithDeleted();
 
-		void HardDelete(TEntity entity);
+        void HardDelete(TEntity entity);
 
-		void Undelete(TEntity entity);
-	}
+        void Undelete(TEntity entity);
+    }
 }
