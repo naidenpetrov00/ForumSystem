@@ -21,10 +21,21 @@
             this.userManager = userManager;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create(CreateCommentInputModel input)
         {
+            var parentCommentId = input.ParentCommentId == 0 ? (int?)null : input.ParentCommentId;
+
+            if (parentCommentId.HasValue)
+            {
+                if (!this.commentService.IsInPostId(parentCommentId.Value, input.PostId))
+                {
+                    return this.BadRequest();
+                }
+            }
+
             var userId = this.userManager.GetUserId(this.User);
-            await this.commentService.Create(input.PostId, userId, input.Content);
+            await this.commentService.Create(input.PostId, userId, input.Content, parentCommentId);
 
             return this.RedirectToAction("ById", "Posts", new { id = input.PostId });
         }

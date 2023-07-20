@@ -47,7 +47,7 @@
 						<a class="text-muted d-inline-flex align-items-center align-middle" data-abc="true"> <i class="bi bi-heart-fill text-danger"></i>&nbsp; <span class="align-middle">445</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="bi bi-eye-fill text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span>
 					</div>
 					<div class="px-4 pt-3">
-						<button type="button" class="btn btn-primary" onclick="showAddCommentForm()"><i class="ion ion-md-create"></i>Comment</button>
+						<button type="button" class="btn btn-primary" onclick="showAddCommentForm(0)"><i class="ion ion-md-create"></i>Comment</button>
 					</div>
 				</div>
 			</div>
@@ -55,33 +55,67 @@
 	</div>
 </div>
 
-﻿<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-	tinymce.init({
-		selector: "textarea",
-		relative_urls: false,
-		remove_script_host: false,
-		convert_urls: true,
-		plugins: ["image paste table link code media fullscreen wordcount searchreplace lists"]
-	});
-</script>
-<div id="AddCommentForm" style="display:none">
-	<form asp-controller="Comments" asp-action="Create" method="post">
+@foreach (var comment in this.Model.Comments)
+{
+	<div class="container-fluid mt-100">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card mb-4">
+					<div class="card-header">
+						<div class="row flex align-items-center">
+							<div class="col-1">
+								<img src="https://i.imgur.com/iNmBizf.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+							</div>
+							<div class="media-body col-2">
+								@comment.UserUserName
+								<div class="text-muted small">@comment.CreatedOn</div>
+							</div>
+							<div class="col-9 text-end">
+								<button type="button" class="btn btn-secondary" onclick="showAddCommentForm(@comment.Id)"><i class="ion ion-md-create"></i>Answer</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						@Html.Raw(comment.SanitizedContent);
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	<form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display:none">
+		<input type="hidden" name="ParentCommentId" value="0" />
 		<input type="hidden" name="PostId" value="@this.Model.Id" />
 		<div>
 			<label for="Content"></label>
 			<textarea name="Content" id="Content" class="form-control"></textarea>
 		</div>
-		<div>
+		<div class="mt-2">
 			<input type="submit" value="Add Comment" class="btn btn-primary" />
 		</div>
 	</form>
 </div>
 
 @section Scripts{
+			﻿<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		tinymce.init({
+			selector: "textarea",
+			relative_urls: false,
+			remove_script_host: false,
+			convert_urls: true,
+			plugins: ["image paste table link code media fullscreen wordcount searchreplace lists"]
+		});
+	</script>
 	<script>
-		function showAddCommentForm() {
+		function showAddCommentForm(parentId) {
+			$("#AddCommentForm input[name='ParentCommentId']").val(parentId);
 			$("#AddCommentForm").show();
+			$([document.documentElement,document.body]).animate({
+				scrollTop: $("#AddCommentForm").offset().top
+			}, 100);
 		}
 
 		function sendVote(postId, isUpVote) {
