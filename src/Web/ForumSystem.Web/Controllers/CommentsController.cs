@@ -23,7 +23,7 @@
 		}
 
 		[HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateCommentInputModel input)
+		public async Task<IActionResult> Create([FromBody] CreateCommentInputModel input)
 		{
 			var parentCommentId = input.ParentCommentId == 0 ? (int?)null : input.ParentCommentId;
 
@@ -36,9 +36,9 @@
 			}
 
 			var userId = this.userManager.GetUserId(this.User);
-			await this.commentService.Create(input.PostId, userId, input.Content, parentCommentId);
+			var comment = await this.commentService.Create(input.PostId, userId, input.Content, parentCommentId);
 
-			return this.Ok();
+			return this.Ok(comment);
 		}
 	}
 }

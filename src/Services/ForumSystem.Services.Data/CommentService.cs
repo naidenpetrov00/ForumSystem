@@ -16,7 +16,7 @@
             this.commentsRepository = commentsRepository;
         }
 
-        public async Task Create(int postId, string userId, string content, int? parentCommentId = null)
+        public async Task<Comment> Create(int postId, string userId, string content, int? parentCommentId = null)
         {
             var comment = new Comment
             {
@@ -27,6 +27,8 @@
             };
             await this.commentsRepository.AddAsync(comment);
             await this.commentsRepository.SaveChangesAsync();
+
+            return comment;
         }
 
         public bool IsInPostId(int commentId, int postId)

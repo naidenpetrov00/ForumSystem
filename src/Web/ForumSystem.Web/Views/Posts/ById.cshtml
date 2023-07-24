@@ -110,79 +110,10 @@
 		<input type="hidden" name="PostId" value="@this.Model.Id" />
 		<div>
 			<label for="Content"></label>
-			<textarea name="Content" id="Content" class="form-control"></textarea>
+			<textarea name="Content" id="textareaTinymce" class="form-control"></textarea>
 		</div>
 		<div class="mt-2">
 			<input type="submit" id="SubmitComment" value="Add Comment" class="btn btn-primary" onclick="AddComment(@this.Model.Id)" />
 		</div>
 	</form>
 </div>
-
-@section Scripts{
-	<script>
-		function showAddCommentForm(parentId) {
-			$("#AddCommentForm input[name='ParentCommentId']").val(parentId);
-			$("#AddCommentForm").show();
-			$([document.documentElement, document.body]).animate({
-				scrollTop: $("#AddCommentForm").offset().top
-			}, 100);
-		}
-
-		function sendVote(postId, isUpVote) {
-			let token = $("#votesForm input[name=__RequestVerificationToken]").val();
-			let json = {
-				postId: postId,
-				isUpVote: isUpVote
-			};
-
-			$.ajax(
-				{
-					url: "/api/votes",
-					type: "POST",
-					data: JSON.stringify(json),
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					headers: { "X-CSRF-TOKEN": token },
-					success: function (data) {
-						$("#votesCount").html(data.votesCount)
-					}
-				}
-			)
-		}
-
-		function AddComment(postId) {
-			event.preventDefault();
-
-			const token = $("#AddCommentForm input[name=__RequestVerificationToken]").val();
-			const form = $('#AddCommentForm');
-			const json = {
-				PostId: postId,
-				ParentCommentId: parseInt($('#ParentCommentId').val()),
-				Content: tinymce.get("Content").getBody().textContent
-			};
-
-			$.ajax(
-				{
-					url: "/Comments/Create",
-					type: "POST",
-					data: JSON.stringify(json),
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					headers: { "X-CSRF-TOKEN": token },
-					success: function () {
-					}
-				}
-			)
-		}
-	</script>
-				﻿<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		tinymce.init({
-			selector: "textarea",
-			relative_urls: false,
-			remove_script_host: false,
-			convert_urls: true,
-			plugins: ["image paste table link code media fullscreen wordcount searchreplace lists"]
-		});
-	</script>
-}
