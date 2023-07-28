@@ -5,6 +5,7 @@
 	using ForumSystem.Data.Models;
 	using ForumSystem.Services.Data.Interfaces;
 	using ForumSystem.Web.ViewModels.Comments;
+	using Microsoft.AspNetCore.Authorization;
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.AspNetCore.Mvc;
 	using Newtonsoft.Json;
@@ -23,6 +24,7 @@
 		}
 
 		[HttpPost]
+		[Authorize]
 		public async Task<IActionResult> Create([FromBody] CreateCommentInputModel input)
 		{
 			var parentCommentId = input.ParentCommentId == 0 ? (int?)null : input.ParentCommentId;
