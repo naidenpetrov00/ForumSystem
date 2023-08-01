@@ -1,10 +1,7 @@
 ﻿namespace ForumSystem.Services.Data
 {
     using System.Linq;
-    using System.Security.Principal;
     using System.Threading.Tasks;
-
-    using AutoMapper;
     using ForumSystem.Common;
     using ForumSystem.Data.Common.Repositories;
     using ForumSystem.Data.Models;

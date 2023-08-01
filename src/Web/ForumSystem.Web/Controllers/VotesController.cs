@@ -7,8 +7,7 @@
     using ForumSystem.Data.Models;
     using ForumSystem.Services.Data;
     using ForumSystem.Web.ViewModels.Votes;
-	using Microsoft.AspNetCore.Authorization;
-	using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]

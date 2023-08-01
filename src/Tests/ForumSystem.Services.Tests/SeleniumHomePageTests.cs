@@ -1,10 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.Extensions;
-using System.Diagnostics;
-using Xunit.Abstractions;
 
 namespace ForumSystem.Services.Tests
 {

@@ -1,7 +1,6 @@
 ﻿namespace ForumSystem.Web
 {
     using System;
-    using System.Configuration;
     using System.Reflection;
 
     using ForumSystem.Common.Models;
