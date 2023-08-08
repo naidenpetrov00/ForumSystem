@@ -1,4 +1,19 @@
-﻿function getWeather(apiKey) {
+﻿const connection = null;
+
+setupConnection = () => {
+    connection = new signalR.HubConnectionBuilder()
+        .withUrl("/weatherHub")
+        .build();
+
+    connection.on("GetWeather", (apiKey) => {
+        getWeather(apiKey);
+    })
+    connection.on("WeatherUpdate", (apiKey) => {
+        getWeather(apiKey);
+    });
+}
+
+function getWeather(apiKey) {
     let latitude = 0;
     let longitude = 0;
 
