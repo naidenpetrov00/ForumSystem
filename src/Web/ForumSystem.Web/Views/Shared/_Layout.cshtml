@@ -37,6 +37,10 @@
 		</main>
 	</div>
 
+	<div>
+		<vc:weather></vc:weather>
+	</div>
+
 	<footer class="border-top footer text-muted">
 		<div class="container">
 			&copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -51,6 +55,7 @@
 	<script src="~/lib/moment/min/moment-with-locales.min.js" asp-append-version="true"></script>
 	<script src="~/custom/commentservice.js"></script>
 	<script src="~/custom/voteservice.js"></script>
+	<script src="~/custom/weatherservice.js"></script>
 	<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		tinymce.init({

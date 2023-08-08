@@ -1,7 +1,8 @@
 ﻿namespace ForumSystem.Services.Data.Interfaces
 {
-    using ForumSystem.Data.Models;
     using System.Threading.Tasks;
+
+    using ForumSystem.Data.Models;
 
     public interface ICommentService
     {

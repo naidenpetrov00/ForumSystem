@@ -1,1 +1,6 @@
-﻿
+﻿@model ForumSystem.Web.ViewModels.Weather.WeatherModel
+
+<p id="name"></p>
+<p id="temp"></p>
+<p id="weather"></p>
+<input id="weatherGet" type="button" value="Get Weather" onclick="getWeather('@Model.ApiKey')" />

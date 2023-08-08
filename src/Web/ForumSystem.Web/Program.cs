@@ -14,6 +14,7 @@
     using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Services.Mapping;
     using ForumSystem.Services.Messaging;
+    using ForumSystem.Web.Hubs;
     using ForumSystem.Web.ViewModels;
     using Hangfire;
     using Microsoft.AspNetCore.Builder;
@@ -62,6 +63,10 @@
                 options.HeaderName = "X-CSRF-TOKEN";
             });
             services.AddSwaggerGen();
+            services.AddSignalR(options =>
+                {
+                    options.EnableDetailedErrors = true;
+                });
 
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -163,6 +168,7 @@
             app.UseHangfireDashboard();
 
             app.MapHangfireDashboard();
+            app.MapHub<WeatherHub>("/weatherHub");
             app.MapControllerRoute(
                 "areaRoute",
                 "{area:exists}/{controller=Home}/{action=Index}/{id?}");
