@@ -21,6 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ForumSystem.Common\ForumSystem.Common.csproj" />
+    <ProjectReference Include="..\..\ForumSystem.Hubs\ForumSystem.Hubs.csproj" />
   </ItemGroup>
 
 </Project>

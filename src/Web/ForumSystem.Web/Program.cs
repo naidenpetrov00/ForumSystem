@@ -10,6 +10,7 @@
 	using ForumSystem.Data.Models;
 	using ForumSystem.Data.Repositories;
 	using ForumSystem.Data.Seeding;
+	using ForumSystem.Hubs.Filters;
 	using ForumSystem.Services.Data;
 	using ForumSystem.Services.Data.Interfaces;
 	using ForumSystem.Services.Mapping;
@@ -168,9 +169,11 @@
 			app.UseAuthentication();
 			app.UseAuthorization();
 
-			app.UseHangfireDashboard();
-
-			app.MapHangfireDashboard();
+			app.UseHangfireDashboard("/hangfire", new DashboardOptions
+			{
+				Authorization = new[] { new HangFireAuthorizationFilter() },
+			});
+			SeedJobs(app.Services);
 			app.MapHub<WeatherHub>("/weatherHub");
 			app.MapControllerRoute(
 				"areaRoute",
@@ -184,6 +187,12 @@
 				new { controller = "Categories", action = "ByName" });
 
 			app.MapRazorPages();
+		}
+
+		private static void SeedJobs(IServiceProvider services)
+		{
+			var weatherService = services.GetRequiredService<IWeatherService>();
+			RecurringJob.AddOrUpdate("weatherUpdate", () => weatherService.Update(), Cron.Minutely);
 		}
 	}
 }

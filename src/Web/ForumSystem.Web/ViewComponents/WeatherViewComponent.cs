@@ -5,7 +5,6 @@
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.SignalR;
 	using Microsoft.Extensions.Configuration;
-	using System.Threading.Tasks;
 
 	public class WeatherViewComponent : ViewComponent
 	{
@@ -21,10 +20,9 @@
 		public IViewComponentResult Invoke()
 		{
 			var apiKey = this.configuration["OpenWeather:ApiKey"];
-			this.hubContext.Clients.All.SendAsync("GetWeather", apiKey).GetAwaiter().GetResult();
 			var viewModel = new WeatherModel
 			{
-				ApiKey = this.configuration["OpenWeather:ApiKey"],
+				ApiKey = apiKey,
 			};
 			return this.View(viewModel);
 		}

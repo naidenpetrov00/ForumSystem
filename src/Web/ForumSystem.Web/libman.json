@@ -64,6 +64,13 @@
       "files": [
         "min/moment-with-locales.min.js"
       ]
+    },
+    {
+      "library": "@microsoft/signalr@7.0.10",
+      "destination": "wwwroot/lib/signalr/",
+      "files": [
+        "dist/browser/signalr.min.js"
+      ]
     }
   ]
 }
