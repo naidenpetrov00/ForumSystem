@@ -1,6 +1,7 @@
 # ForumSystem
 
 Welcome to this school project, the purpose of which is to round up my knowledge for ASP.NET Core with Blazor and Microsoft SQL Server for DB.
+Weather forecast is fetched by SignalR with HangFire recurring job.
 
 ![Home](https://github.com/naidenpetrov00/ForumSystem/assets/58266467/62155668-cc76-4120-b217-c573d9531530)
 
