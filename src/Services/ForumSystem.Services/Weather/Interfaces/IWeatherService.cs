@@ -2,8 +2,8 @@
 
 namespace ForumSystem.Services.Weather.Interfaces
 {
-	public interface IWeatherService
-	{
-		Task Update();
-	}
+    public interface IWeatherService
+    {
+        Task Update();
+    }
 }

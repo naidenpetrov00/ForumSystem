@@ -1,28 +1,29 @@
 ﻿namespace ForumSystem.Services.Weather
 {
-	using System.Threading.Tasks;
-	using ForumSystem.Services.Weather.Interfaces;
-	using ForumSystem.Web.Hubs;
-	using Microsoft.AspNetCore.SignalR;
-	using Microsoft.Extensions.Configuration;
+    using System.Threading.Tasks;
 
-	public class WeatherService : IWeatherService
-	{
-		private readonly IHubContext<WeatherHub> hubContext;
-		private readonly IConfiguration configuration;
+    using ForumSystem.Services.Weather.Interfaces;
+    using ForumSystem.Web.Hubs;
+    using Microsoft.AspNetCore.SignalR;
+    using Microsoft.Extensions.Configuration;
 
-		public WeatherService(
-			IHubContext<WeatherHub> hubContext,
-			IConfiguration configuration)
-		{
-			this.hubContext = hubContext;
-			this.configuration = configuration;
-		}
+    public class WeatherService : IWeatherService
+    {
+        private readonly IHubContext<WeatherHub> hubContext;
+        private readonly IConfiguration configuration;
 
-		public async Task Update()
-		{
-			var apiKey = this.configuration["OpenWeather:ApiKey"];
-			await this.hubContext.Clients.All.SendAsync("UpdateWeather", apiKey);
-		}
-	}
+        public WeatherService(
+            IHubContext<WeatherHub> hubContext,
+            IConfiguration configuration)
+        {
+            this.hubContext = hubContext;
+            this.configuration = configuration;
+        }
+
+        public async Task Update()
+        {
+            var apiKey = this.configuration["OpenWeather:ApiKey"];
+            await this.hubContext.Clients.All.SendAsync("UpdateWeather", apiKey);
+        }
+    }
 }
