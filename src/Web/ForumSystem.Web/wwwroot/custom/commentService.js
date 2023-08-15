@@ -19,12 +19,10 @@
             headers: { "X-CSRF-TOKEN": token },
             success: function (data) {
                 console.log(data);
-                console.log("succ");
             },
             error: function (xhr) {
-                    console.log("err");
                 if (xhr.status === 401) {
-                    window.location = '/Account/Login';
+                    window.location.href = '/Identity/Account/Login';
                 }
             }
         }
