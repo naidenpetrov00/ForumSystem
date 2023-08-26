@@ -1,7 +1,5 @@
 ﻿namespace ForumSystem.Hubs.Filters
 {
-    using System;
-
     using Hangfire.Dashboard;
 
     public class HangFireAuthorizationFilter : IDashboardAuthorizationFilter

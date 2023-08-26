@@ -5,7 +5,7 @@
     using ForumSystem.Common.Enums;
     using ForumSystem.Common.Models;
     using ForumSystem.Data.Models;
-    using ForumSystem.Services.Data;
+    using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Web.ViewModels.Votes;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -14,11 +14,11 @@
     [Route("api/[controller]")]
     public class VotesController : ControllerBase
     {
-        private readonly IVoteService voteService;
+        private readonly IVotesService voteService;
         private readonly UserManager<ApplicationUser> userManager;
 
         public VotesController(
-            IVoteService voteService,
+            IVotesService voteService,
             UserManager<ApplicationUser> userManager)
         {
             this.voteService = voteService;

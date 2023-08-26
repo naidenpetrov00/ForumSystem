@@ -1,8 +1,10 @@
-﻿namespace ForumSystem.Services.Data
+﻿namespace ForumSystem.Services.Data.Interfaces
 {
     using System.Threading.Tasks;
 
-    public interface IVoteService
+    using ForumSystem.Common;
+
+    public interface IVotesService : IService
     {
         Task VoteAsync(int postId, bool isUpvote, string identity, bool signedUser);
 

@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
-
-namespace ForumSystem.Services.Weather.Interfaces
+﻿namespace ForumSystem.Services.Weather.Interfaces
 {
-    public interface IWeatherService
+    using System.Threading.Tasks;
+
+    using ForumSystem.Common;
+
+    public interface IWeatherService : IService
     {
         Task Update();
     }

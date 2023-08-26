@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
 
-    public interface ICategoriesService
+    using ForumSystem.Common;
+
+    public interface ICategoriesService : IService
     {
         IEnumerable<T> GetAll<T>(int? count = null);
 

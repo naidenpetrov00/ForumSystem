@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
 
-    public interface ISettingsService
+    using ForumSystem.Common;
+
+    public interface ISettingsService : IService
     {
         int GetCount();
 

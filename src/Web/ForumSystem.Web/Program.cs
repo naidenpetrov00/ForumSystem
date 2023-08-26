@@ -11,13 +11,11 @@
     using ForumSystem.Data.Repositories;
     using ForumSystem.Data.Seeding;
     using ForumSystem.Hubs.Filters;
-    using ForumSystem.Services.Data;
     using ForumSystem.Services.Data.Interfaces;
     using ForumSystem.Services.Mapping;
-    using ForumSystem.Services.Messaging;
-    using ForumSystem.Services.Weather;
     using ForumSystem.Services.Weather.Interfaces;
     using ForumSystem.Web.Hubs;
+    using ForumSystem.Web.Infrastructure;
     using ForumSystem.Web.ViewModels;
     using Hangfire;
     using Microsoft.AspNetCore.Builder;
@@ -45,7 +43,8 @@
                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(IdentityOptionsProvider.GetIdentityOptions)
-                .AddRoles<ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddRoles<ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.Configure<CookiePolicyOptions>(
                 options =>
@@ -102,18 +101,18 @@
             services.AddHangfireServer();
 
             // Data repositories
-            services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
-            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+            services.AddScoped(
+                typeof(IDeletableEntityRepository<>),
+                typeof(EfDeletableEntityRepository<>));
+            services.AddScoped(
+                typeof(IRepository<>),
+                typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
-            services.AddTransient<ICategoriesService, CategoriesService>();
-            services.AddTransient<IPostService, PostService>();
-            services.AddTransient<IVoteService, VotesService>();
-            services.AddTransient<ICommentService, CommentService>();
-            services.AddTransient<IWeatherService, WeatherService>();
+            services.AddConventionalServices(
+                typeof(ICategoriesService).Assembly,
+                typeof(IWeatherService).Assembly);
         }
 
         private static void Configure(WebApplication app)

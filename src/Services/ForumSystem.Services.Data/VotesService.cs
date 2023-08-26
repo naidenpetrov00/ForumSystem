@@ -6,8 +6,9 @@
     using ForumSystem.Common;
     using ForumSystem.Data.Common.Repositories;
     using ForumSystem.Data.Models;
+    using ForumSystem.Services.Data.Interfaces;
 
-    public class VotesService : IVoteService
+    public class VotesService : IVotesService
     {
         private readonly IRepository<Vote> voteRepository;
 

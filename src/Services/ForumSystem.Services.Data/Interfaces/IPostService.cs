@@ -3,7 +3,9 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    public interface IPostService
+    using ForumSystem.Common;
+
+    public interface IPostService : IService
     {
         Task<int> CreateAsync(string title, string content, int categoryId, string userId);
 
